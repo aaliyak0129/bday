@@ -1,0 +1,49 @@
+body{
+    background-image: url(./image/hand-drawn-background-valentines-day-celebration_23-2151178761.avif);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    background-color: rgba(241, 148, 148, 0.301);
+   border: 1px solid palevioletred;
+    border-radius: 20px;
+/* margin-top: 180px; */
+color: rgb(239, 78, 105);
+
+}
+/* h3{
+    text-align: center;
+margin-top: 180px;
+color: rgb(239, 78, 105);
+
+} */
+button{
+    background-color: rgb(239, 78, 105);
+    color: white;
+    width:200px;
+    height: 200px;
+    font-size: 80px;
+}
+div{
+     display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+button:hover{
+    background-color: white;
+    color: rgb(239, 78, 105);
+}
+.hovertext {
+    position: relative;
+}
+
+
+
+.hovertext:hover::after {
+    content: " option zada khush na ho ap😎";
+}
+.hovertext:hover {
+    font-size: 20px; /* Smaller font size on hover */
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="bday.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading">
+      <a href="/p1.html" target="_parent"><h1>HAPPY BIRTHDAY!</h1></a>
+      <h3>tap on cake!</h3>
+    </div>
+    <audio id="bg-music" autoplay loop>
+        <source src="happy-birthday-254480.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+           let musicStarted = false;
+
+document.addEventListener("click", function() {
+    if (!musicStarted) {
+        document.getElementById("bg-music").play(); // Play music
+        musicStarted = true;
+    }
+    releaseBalloons();
+});
+
+function releaseBalloons() {
+    for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+            createBalloon();
+        }, i * 200); // Delay each balloon slightly
+    }
+}
+
+function createBalloon() {
+    let balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+
+    // Random balloon colors
+    let colors = ["red", "blue", "yellow", "green", "purple", "orange"];
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+    balloon.style.backgroundColor = randomColor;
+
+    // Random horizontal position
+    let randomX = Math.random() * window.innerWidth;
+    balloon.style.left = `${randomX}px`;
+    balloon.style.bottom = "0px"; // Start from bottom
+
+    document.body.appendChild(balloon);
+
+    // Remove balloon after animation ends
+    setTimeout(() => {
+        balloon.remove();
+    }, 5000);
+}
+
+    </script>
+    
+</body>
+</html>
